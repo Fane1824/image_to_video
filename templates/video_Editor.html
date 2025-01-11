@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/video_Editor.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Protest+Revolution&display=swap" rel="stylesheet">
+
+</head>
+<body style="margin-top: 0%; margin-left: 0%; margin-right: 0%; margin-bottom: 0%;">
+    <div>
+        <img>
+    </div>
+    <div>
+
+        <div class="bgmusic">
+
+            <p class="text">Add Background music:</p>
+            <form action="/audio_selected" method="post" enctype="multipart/form-data">
+                <select name="audio">
+                    <option value="audio1.mp3" {% if audio_var == "audio1.mp3" %}selected{% endif %}>Audio 1</option>
+                    <option value="audio2.mp3" {% if audio_var == "audio2.mp3" %}selected{% endif %}>Audio 2</option>
+                    <option value="audio3.mp3" {% if audio_var == "audio3.mp3" %}selected{% endif %}>Audio 3</option>
+                </select>
+                <input type="submit" value="Add Background Music">
+            </form>
+    
+        </div>
+
+        <div class="titlebar"><h1 id="heading">Video Editor</h1></div>
+
+        <div id = "toolkit">
+
+            <div><h1 id = "toolkitheading">Toolkit</h1></div>
+            <!-- Eshaan, here is the button you cant delete -->
+            {% if show_congratulations_button %}
+            <div>
+                <button id="congratulations-button" onclick="location.href='/congratulations'">Go to Congratulations Page</button>
+            </div>
+            {% endif %}
+            <!-- End of section you cant delete -->
+            <div><hr style="margin-top: -2%; border-color: gold; border-width: 1px; border-style: solid;"></div>
+            <br>
+            <br>
+            <div><button style="background-color: purple; border-width: 1px; border-style: solid;"><img class = "tools" src="{{ url_for('static', filename='images/pause.png') }}"></button></div>
+            <br>
+            <br>
+            <div><button style="background-color: purple; border-width: 1px; border-style: solid;"><img class = "tools" src="{{ url_for('static', filename='images/play-buttton.png') }}"></button></div>
+            <br>
+            <br
+            <div><button style="background-color: purple; border-width: 1px; border-style: solid;"><img class = "tools" src="{{ url_for('static', filename='images/fast-forward.png') }}"></button></div>
+            <br>
+            <br>
+            <div><button style="background-color: purple; border-width: 1px; border-style: solid;"><img class = "tools" src="{{ url_for('static', filename='images/rewind-button.png') }}"></button></div>
+            
+        </div>
+
+        <div id = "Imageeditor">
+
+            <div><h1 id = "Imageeditorhead">Image Editor</h1></div>
+
+            <p class="text">Image Duration:</p>
+            <form action="/duration_selected" method="post" enctype="multipart/form-data">
+                <select name="image_duration">
+                    <option value="1" {% if duration_var == '1' %}selected{% endif %}>1 second</option>
+                    <option value="2" {% if duration_var == '2' %}selected{% endif %}>2 seconds</option>
+                    <option value="3" {% if duration_var == '3' %}selected{% endif %}>3 seconds</option>
+                    <option value="5" {% if duration_var == '5' %}selected{% endif %}>5 seconds</option>
+                    <option value="7" {% if duration_var == '7' %}selected{% endif %}>7 seconds</option>
+                </select>
+                <input type="submit" value="Update image duration">
+            </form>
+            
+            
+
+            <p class="text">Select Transition:</p>
+            <form action="/transition_selected" method="post" enctype="multipart/form-data">
+                <select name="transition">
+                    <option value="crossfadein" {% if transition_var == 'crossfadein' %}selected{% endif %}>Crossfade In</option>
+                    <option value="fadein" {% if transition_var == 'fadein' %}selected{% endif %}>Fade In</option>
+                </select>
+                <input type="submit" value="Update transition effect">
+            </form>
+            
+<!-- 
+            <p class="text">Transition: </p>
+            <form method="post" enctype="multipart/form-data">
+                <input list="transition">
+                <datalist id="transition">
+                  <option value="Default">
+                  <option value="Pixel">
+                  <option value="Butterfly">
+                  <option value="Swoosh">
+                  <option value="Spin">
+                </datalist>
+            </form> -->
+
+
+            <br>
+
+            <div><hr style="margin-top: -2%; border-color: gold; border-width: 1px; border-style: solid;"></div>
+
+            <div><h1 id = "videoresolution">Video Stats</h1></div>
+
+            <p class="text">Video Resolution:</p>
+            <form action="/generate_video" method="post" enctype="multipart/form-data">
+                <select name="video_resolution">
+                    <option value="(854, 480)" {% if resolution_var == '(854, 480)' %}selected{% endif %}>854 x 480</option>
+                    <option value="(1280, 720)" {% if resolution_var == '(1280, 720)' %}selected{% endif %}>1280 x 720</option>
+                    <option value="(1920, 1080)" {% if resolution_var == '(1920, 1080)' %}selected{% endif %}>1920 x 1080</option>
+                    <option value="(2560, 1440)" {% if resolution_var == '(2560, 1440)' %}selected{% endif %}>2560 x 1440</option>
+                    <option value="(3840, 2160)" {% if resolution_var == '(3840, 2160)' %}selected{% endif %}>3840 x 2160</option>
+                </select>
+                <input type="submit" value="Generate Video">
+            </form>
+            
+            
+            
+
+        </div>
+
+        <div id = "videodiv">
+
+            <video id = "video" controls>
+                <source src="{{ url_for('static', filename='images/output_video.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+    
+        </div>
+
+        <div class="flex-container">
+
+            {% for image_data in image_list %}
+            <div><button id="add_image_button"><img src="data:image/jpeg;base64,{{ image_data }}" class="image"></button></div>
+            {% endfor %}
+
+            <!-- <div><button id = "add_image_button"><img src="data:image/jpeg;base64,{{ image_data }}" class="image"></button></div>
+            <div><button class="button_style"><img src="{{ url_for('static', filename='images/gray.png') }}" class="image"></button></div>
+            <div><button class="button_style"><img src="{{ url_for('static', filename='images/gray.png') }}" class="image"></button></div>  
+            <div><button class="button_style"><img src="{{ url_for('static', filename='images/gray.png') }}" class="image"></button></div>
+            <div><button class="button_style"><img src="{{ url_for('static', filename='images/gray.png') }}" class="image"></button></div>
+            <div><button class="button_style"><img src="{{ url_for('static', filename='images/gray.png') }}" class="image"></button></div>  
+            <div><button class="button_style"><img src="{{ url_for('static', filename='images/gray.png') }}" class="image"></button></div> -->
+
+        </div>
+    
+    </div>
+      
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload content</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Honk&display=swap">
+    </head>
+    <body>
+        <div id = "header">
+            <div id="logo">QES</div>
+            <div id="buttons">
+
+                <button class="button" onclick="location.href='/token/remove'">Sign out</button>
+            </div>
+        </div>
+        <div id = "bg">
+            <div id="welcome-box">
+                <div class="container mt-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 style="font-family: 'Honk', sans-serif;" class="card-title">Drag and Drop Files</h1>
+                        </div>
+                        <div class="card-body">
+                            <!-- <div class="drop-zone" id="drop-zone">
+                                <p class="text-muted">Drag & Drop files here or click to upload</p>
+                                <img src="uploadimg.png" alt="Upload">
+                                <input type="file" style="margin-left:5vw;"  id="file-input" multiple>
+                            </div> -->
+                            <form action="/api/upload_images" method="post" enctype="multipart/form-data" >
+                                <div class="drop-zone" id="drop-zone">
+                                    <p class="text-muted">Drag & Drop files here or click to upload</p>
+                                    <img src="{{ url_for('static', filename='images/uploadimg.png') }}" alt="Upload">
+                                    <input type="file" style="margin-left:5vw;"  id="file-input" name="images" multiple>
+                                </div>
+                                <input type="submit" value="Upload">
+                                
+                            </form>
+                            <div class="imgsubmission">
+                                <img src="{{ url_for('static', filename='images/addvid.png') }}" alt="Create video">
+                                <!-- <input type="submit" value="Create video"> -->
+                                <form action="/api/video" method="get">
+                                    <button type="submit">Create video</button>
+                                </form>
+                                <p>{{ failure_message }}</p>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

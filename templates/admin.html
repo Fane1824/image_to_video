@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Administrative Details</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Honk&display=swap">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id = "header">
+            <div id="logo">QES</div>
+            <div id="buttons">
+                <button class="button" onclick="location.href='/api/upload'">Home</button>
+                <button class="button" onclick="location.href='/token/remove'">Sign out</button>
+            </div>
+        </div>
+        <div id = "bg">
+            <div id="congratulations-box">
+                <h1 style="font-family: 'Honk', sans-serif;">Administrative details</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User id</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>User images</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[3] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

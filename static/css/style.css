@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+}
+
+#header {
+    background-color: #ff00ff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#buttons {
+    display: flex;
+}
+
+.button {
+    padding: 5px 10px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: gray;
+}
+
+#bg {
+    background-color: #001f33;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    text-align: center;
+}
+
+#congratulations-box {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Ensure items stack vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+
+#download-button {
+    margin-top: 20px; /* Add margin between text and button */
+    padding: 10px 20px;
+    background-color: darkblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color:white;
+}
+
+#download-button:hover {
+    background-color: #006666;
+}
+
+#welcome-box {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Ensure items stack vertically */
+    align-items: center; /* Center items horizontally */
+    max-width: 70vw;
+
+}
+
+button:focus,
+input:focus{
+  outline: none;
+  box-shadow: none;
+}
+a,
+a:hover{
+  text-decoration: none;
+}
+
+table {
+    width: 60vw; 
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 3.4375vw; 
+}
+
+th, td {
+    border: 0.0625vw solid #dddddd; 
+    padding: 0.625vw;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #dddddd;
+}
+
+/*----------multiple-file-upload-----------*/
+.drop-zone {
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drop-zone img {
+    margin-bottom: 10px; /* Adjust as needed */
+    width:5vw;
+}
+
+.drag-over {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.imgsubmission {
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgsubmission img {
+    margin-bottom: 10px; /* Adjust as needed */
+    width:5vw;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Honk&display=swap">
+</head>
+<body>
+    <div id="header">
+        <div id="logo">QES</div>
+        <div id="buttons">
+            <button class="button" onclick="location.href='/api/upload'">Home</button>
+            <button class="button" onclick="location.href='/token/remove'">Sign out</button>
+        </div>
+    </div>
+    <div id="bg">
+        <div id="middle-content">
+            <div id="congratulations-box">
+                <h1 style="font-family: 'Honk', sans-serif;">Congratulations!</h1>
+                <p>Your video is ready.</p>
+                <a href="/download_video" download><button id="download-button">Download video here</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

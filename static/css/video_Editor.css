@@ -1,0 +1,215 @@
+.titlebar {
+    position: relative;
+    width: 70%;
+    height: 150px; 
+    top: 0%;
+    /* margin: 0 auto;  */
+    background-color: rgb(4, 4, 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+#heading {
+    font-family: 'Honk', system-ui;
+    font-size: 800%;
+    float: left;
+}
+
+body{
+
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.text{
+
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 100%;
+    color: whitesmoke;
+
+}
+
+#selectedFileText{
+
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
+
+}
+
+.bgmusic{
+    top: 0%;
+    float: left;
+    width: 15%;
+    height: 150px; 
+    border: black;
+    border-width: 1px;
+    align-items: center;
+    justify-content: center;
+    background-color: purple;
+}
+
+#upload{
+
+    font-style: 'Protest Revolution', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
+    background-color: cyan;
+
+}
+
+#toolkitheading{
+
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 400%;
+    color: whitesmoke;
+    margin-left: 10%;
+    margin-top: 15%;
+
+}
+
+#toolkit{
+
+    position: relative;
+    top: 0%;
+    width: 15%;
+    height: 625px; 
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    float: left;
+
+}
+
+#toolkit > div{
+
+    text-align: center;
+    line-height: 75px;
+    height: fit-content;
+
+}
+
+
+.tools{
+
+    height: 45px;
+    width: 45px;
+
+}
+
+#videodiv {
+
+    background-color: blue;
+    width: 768px;
+    height: 420px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#video {
+
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0; 
+
+}
+
+
+#Imageeditor{
+
+    position: fixed;
+    top: 150px;
+    width: 15%;
+    height: 475px; 
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    border-top: 2px solid gold;
+
+}
+
+#Imageeditor > div{
+
+    text-align: center;
+    line-height: 75px;
+    height: fit-content;
+
+}
+
+#Imageeditorhead{
+
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 200%;
+    color: whitesmoke;
+    top: 5%;
+    margin: auto;
+
+}
+
+.flex-container {
+    display: flex;
+    background-color: purple;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    bottom: 0%; 
+    margin: auto;
+    width: 768px; 
+    height: 100px;
+}
+
+.flex-container > div {
+
+    background-color: gold;
+    min-width: 100px;
+    max-width: 100px;
+    height: 75px; 
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+
+}
+
+.image {
+
+    background-color: gold;
+    width: 100%; 
+    height: 100%; 
+
+}
+
+#add_image_button{
+
+    background-color: gold;
+    border: 1px solid gold;
+
+}
+
+.button_style{
+
+    background-color: gray;
+    border: 1px solid gold;
+
+
+}
+
+#videoresolution{
+
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 200%;
+    color: whitesmoke;
+    top: 5%;
+    margin: auto;
+
+}

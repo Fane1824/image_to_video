@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loginPage.css') }}">
+    <title>User Login</title>
+    <!-- <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            // Prevent the form from submitting normally
+            event.preventDefault();
+
+            // Get the form data
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Send the form data to the login route
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        // The request was not successful
+                        return response.json().then(data => {
+                            // Handle the error message
+                            console.error(data.msg);
+                            // You can also display the error message to the user here
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Store the JWT token in a cookie
+                    document.cookie = `jwtToken=${data.access_token}; path=/`;
+
+                    // Redirect to a new page
+                    window.location.href = `/newPage?token=${data.access_token}`;
+                })
+                .catch(error => console.error(error));
+        });
+        
+    </script> -->
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="image">
+            <!-- Replace with your image -->
+          
+            <img src="{{ url_for('static', filename='images/popArt1.jpg') }}" alt="My Image">
+        </div>
+        <div class="content">
+            <div id="header">
+                <h1>WELCOME BACK</h1>
+                <h5>Please login into your account</h5>
+            </div>
+
+            <p style="color:red">{{ failure_message }}</p>
+            <div id="login_form">
+                <form id="loginForm" action="/token/auth" method="post">
+
+                    <div class="login_content">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username">
+                    </div>
+                    <div class="login_content_password">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                    <div class="login_buttons">
+                        <button id="log" type="submit">Login</button>
+                        <a href="{{ url_for('signUpPage') }}">  <button type="button" >Sign Up?</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
